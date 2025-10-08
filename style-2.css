@@ -1,3 +1,19 @@
 * {
-    color: green;
+  color: whitesmoke;
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-size: 1.1em;
+}
+
+body,
+html {
+  background-color: #1e1e1e;
+  background-image: url("background.svg");
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: rgb(49, 49, 49);
 }

@@ -1,62 +1,117 @@
 * {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #333;
+  font-family: "Telex", sans-serif;
+  color: #333;
 }
 
-html, body {
-    background-color: whitesmoke;
-    padding:0;
-    margin: 0;
+html,
+body {
+  background-color: whitesmoke;
+  padding: 0;
+  margin: 0;
 }
 
 header {
-    width: 100%;
-    text-align: center;
-    min-height: 30vh;
-    background: linear-gradient(#FFE5F6, #EAE5D8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  width: 100%;
+  text-align: center;
+  min-height: 30vh;
+  background: linear-gradient(#ffe5f6, #eae5d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 article > section {
-    width: 1000px;
-    max-width: 90vw;
-    margin: 3rem auto;
+  width: 1000px;
+  max-width: 80vw;
+  margin: 3rem auto;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px solid #eae5d8;
+  border-radius: 1rem;
+  padding: 2rem;
+  font-style: italic;
+  width: 400px;
+  max-width: 60vw;
+  margin: 2rem auto;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+#pricing p {
+  text-align: center;
 }
 
 #gallery {
-    padding: 1em 0;
-    background: linear-gradient(#EAE5D8, #FFE5F6);
-    width: 100%;
+  padding: 0.5em 0;
+  background: linear-gradient(#eae5d8, #ffe5f6);
+  width: 100%;
 }
 
-#gallery h3 {
-    position: absolute;
-    margin: -2em 0 0 1em;
-    background-color: #EAE5D8;
-    border-radius: 5px 5px 0 0;
-    padding: 0.5em 1em;
+#images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+#images img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  max-width: 90vw;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0 10px #af7b9d70;
+}
+
+main h3 {
+  margin-left: 3rem;
+}
+
+main h3::before {
+  content: "___";
+  position: absolute;
+  display: block;
+  margin-left: -3rem;
+  margin-top: -0.4em;
+  color: #b1a27e;
 }
 
 main h2 {
-    text-align: center;
-    width: 100%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  width: 100%;
+  font-family: "Petit Formal Script", cursive;
 }
 
-#contact {
-    background-color: #FFE5F6;
+footer {
+  background-color: #ffe5f6;
+  padding: 2em 0;
 }
 
 #review-inside {
-    display: flex;
-
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 #review-inside p {
-    border: 3px solid #FFE5F6;
-    border-radius: 1rem;
-    padding: 2rem;
+  border: 3px solid #ffe5f6;
+  border-radius: 1rem;
+  padding: 2rem;
+  font-style: italic;
+  width: 300px;
+  max-width: 80vw;
 }
