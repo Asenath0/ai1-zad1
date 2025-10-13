@@ -31,7 +31,7 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border: 3px solid #eae5d8;
+  border: 3px dotted #eae5d8;
   border-radius: 1rem;
   padding: 2rem;
   font-style: italic;
@@ -41,7 +41,6 @@ ul {
 }
 
 li {
-  list-style-type: none;
   display: flex;
   justify-content: space-between;
   padding: 0.5em;
@@ -108,7 +107,7 @@ footer {
 }
 
 #review-inside p {
-  border: 3px solid #ffe5f6;
+  border: 3px dotted #ffe5f6;
   border-radius: 1rem;
   padding: 2rem;
   font-style: italic;

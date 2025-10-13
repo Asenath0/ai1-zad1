@@ -16,16 +16,17 @@ html {
 
 header {
   background-color: rgba(49, 49, 49, 0.22);
-  padding: 0.5em;
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   backdrop-filter: blur(20px);
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   z-index: 10;
   top: 0;
+  gap: 0.5em;
 }
 
 h1 {
@@ -68,14 +69,122 @@ section {
 }
 
 #about-me p {
-  width: 450px;
+  width: 400px;
   padding: 20px;
   max-width: 70vw;
   text-align: justify;
-  /* background-color: #1e1e1e; */
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(128, 128, 128, 0.089);
+  border-radius: 1rem;
 }
 
 #about-me h3 {
   width: 100%;
+}
+
+main h2 {
+  text-align: center;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.765);
+  font-weight: 800;
+  text-shadow: 0 0 5px rgba(40, 191, 158, 0.765);
+  font-size: larger;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(128, 128, 128, 0.089);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 400px;
+  max-width: 60vw;
+  margin: 2rem auto;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:center;
+  padding: 0.5em;
+}
+
+li .price {
+  text-align: end;
+  flex: 1;
+
+}
+
+li .name {
+  padding-left: 0.5em;
+  flex: 2;
+}
+
+li .price::after {
+  content: " -";
+}
+
+#pricing p {
+  text-align: center;
+  font-style: oblique;
+}
+
+#gallery {
+  text-align: center;
+}
+
+#images {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+#images img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  max-width: 90vw;
+  border-radius: 50%;
+  margin: 1rem auto;
+}
+
+#reviews p {
+  font-style: oblique;
+  color: rgba(255, 255, 255, 0.765);
+  text-shadow: 0 0 5px rgba(40, 191, 158, 0.765);
+  font-weight: 400;
+  text-align: center;
+}
+
+footer {
+  background-color: rgba(49, 49, 49, 0.22);
+  padding: 0.5rem 1rem;
+ 
+  backdrop-filter: blur(20px);
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+footer section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer h3 {
+  width: 100%;
+  font-weight: 400;
+  
+}
+
+footer p {
+  min-width: 200px;
+  width: 45%;
 }
