@@ -28,22 +28,33 @@ article > section {
 }
 
 ul {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border: 3px dotted #eae5d8;
-  border-radius: 1rem;
-  padding: 2rem;
   font-style: italic;
-  width: 400px;
-  max-width: 60vw;
-  margin: 2rem auto;
+  padding: 0;
 }
 
 li {
   display: flex;
   justify-content: space-between;
-  padding: 0.5em;
+}
+
+li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 2px dashed #ccc;
+  width: 1000px;
+  max-width: 80vw;
+  margin-top: 20px;
+}
+
+li span {
+  background-color: whitesmoke;
+  z-index: 3;
+  padding: 0.3em;
+}
+
+.name {
+  margin-right: 0.4em;
 }
 
 #pricing p {
@@ -107,7 +118,7 @@ footer {
 }
 
 #review-inside p {
-  border: 3px dotted #ffe5f6;
+  border: 8px dotted #ffe5f6;
   border-radius: 1rem;
   padding: 2rem;
   font-style: italic;
