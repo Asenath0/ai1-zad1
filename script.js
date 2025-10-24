@@ -1,14 +1,22 @@
 class TaskManager {
-    tasks = [{task: "task1", date: "2025-01-01", checked: false}]
+    tasks = [{task: "Zadanie 1", date: "2025-01-01", checked: false},
+        {task: "Zrobić danie", date: "2025-01-01", checked: false},
+        {task: "Kupić mleko", date: "2025-01-01", checked: false}]
+
+    filteredTasks = [{task: "Zadanie 1", date: "2025-01-01", checked: false},
+        {task: "Zrobić danie", date: "2025-01-01", checked: false},
+        {task: "Kupić mleko", date: "2025-01-01", checked: false}]
+    phrase = ''
 
     draw = () => {
-        console.log(this.tasks)
         const wrapper = document.querySelector("#tasks")
         wrapper.innerHTML = "";
 
-        this.tasks.map((task, id) => {
+        const isFiltered = this.phrase.length > 0
+
+        this.filteredTasks.map((task, id) => {
             const section = document.createElement("section")
-            section.className="task";
+            section.className="task"
 
             section.onclick = () => this.convertToInputs(section)
 
@@ -20,8 +28,10 @@ class TaskManager {
             checkbox.onchange = (e) => this.edit(id, e.target.checked)
 
             const taskName = document.createElement("p")
-            taskName.innerHTML = task.task
-
+            const taskNameContent = task.task.split(this.phrase)
+            taskName.innerHTML = this.phrase.length >= 2 ?
+                `${taskNameContent[0]}<mark>${this.phrase}</mark>${taskNameContent[1]}`
+                : task.task
             box1.append(checkbox)
             box1.append(taskName)
 
@@ -46,8 +56,7 @@ class TaskManager {
 
     convertToInputs = (element) => {
         const task = this.tasks[element.id]
-        
-        console.log(task.chlildren)
+    
     }
 
     add = () => {
@@ -82,6 +91,29 @@ class TaskManager {
         const formButton = document.querySelector("#add")
         formButton.onclick = () => this.add()
     }
+
+    bindSearchBar = () => {
+        const searchBar = document.querySelector('#search-input')
+        searchBar.oninput = (e) => this.filterTasks(e.target.value)
+    }
+
+    bindElements = () => {
+        this.bindForm()
+        this.bindSearchBar()
+    }
+
+    filterTasks = (phrase) => {
+        if (phrase.length < 2) {
+            this.phrase = ''
+            this.filteredTasks = this.tasks
+            this.draw()
+            return
+        }
+
+        this.phrase = phrase
+        this.filteredTasks = this.tasks.filter(task => task.task.includes(phrase))
+        this.draw()
+    }
 }
 
 
@@ -90,5 +122,5 @@ window.onload = () => {
     const manager = new TaskManager();
     manager.draw();
 
-    manager.bindForm()
+    manager.bindElements()
 };
