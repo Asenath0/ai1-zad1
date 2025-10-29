@@ -67,13 +67,18 @@ button {
   border-radius: 4px;
   width: 50px;
   height: 3em;
+  transition: 100ms;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #e7e7e7;
 }
 
 mark {
   background-color: #333;
   color: whitesmoke;
   border: none;
-  margin: 4px;
   border-radius: 4px;
 }
 
@@ -83,7 +88,10 @@ mark {
 
 #tasks section {
   position: relative;
-  z-index: 5;
+}
+
+.editing {
+  z-index: 2;
 }
 
 #outside-click-target {
