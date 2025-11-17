@@ -7,27 +7,33 @@ body {
 }
 
 body {
-  background-image: url("background.svg");
-  background-color: rgb(47, 48, 49);
-  background-size: 200px;
-  background-blend-mode: color-dodge;
+  background: #2b2b2b;
+  background: radial-gradient(
+    circle,
+    rgba(43, 43, 43, 1) 0%,
+    rgba(18, 18, 18, 1) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  min-height: 95vh;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -53,8 +59,10 @@ button:disabled {
 
 input {
   padding: 0.5em;
-  border: 2px solid whitesmoke;
+  border: none;
+  background-color: #333;
   outline: none;
+  color: whitesmoke;
   border-radius: 0.5em;
   font-family: "Rubik", sans-serif;
 }
@@ -87,15 +95,68 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(
+    0deg,
+    rgba(41, 41, 41, 1) 0%,
+    rgb(70, 70, 70) 100%
+  );
+  border-radius: 1em;
+  width: 80px;
+}
+
+.forecast-item span:first-child {
+  margin: 1em 1em 0 1em;
+}
+
+.forecast-item::after {
+  content: "";
+  display: block;
+  height: 1rem;
+  background: linear-gradient(
+    0deg,
+    rgb(70, 70, 70, 0.8) 0%,
+    rgb(70, 70, 70, 0) 100%
+  );
+  width: calc(100% - 3px);
+  margin-bottom: 3px;
+  border-radius: 0 0 1em 1em;
 }
 
 .forecast-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
   width: 100vw;
   overflow-x: auto;
+  margin: 2rem;
+  padding: 1em;
 }
 
+.day-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #13131315;
+  backdrop-filter: invert(5%);
+}
+
+.day-container > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.day-container h3 {
+  margin: 0 1em 1em 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  text-transform: capitalize;
+}
