@@ -11,7 +11,7 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <platform name="electron">
-        <icon src="res/electron/icon.png" />
+        <icon src="res/electron/logo.png" />
         <preference name="ElectronSettingsFilePath" value="res/electron/settings.json" />
     </platform>
 </widget>
